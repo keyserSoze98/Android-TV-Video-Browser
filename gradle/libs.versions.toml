@@ -1,0 +1,36 @@
+[versions]
+agp = "8.13.1"
+kotlin = "2.0.21"
+
+coreKtx = "1.17.0"
+appcompat = "1.7.0"
+recyclerview = "1.3.2"
+
+leanback = "1.1.0-rc01"
+glide = "4.11.0"
+
+lifecycle = "2.8.3"
+coroutines = "1.7.3"
+
+exoplayer = "2.19.1"
+
+[libraries]
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+recyclerview = { group = "androidx.recyclerview", name = "recyclerview", version.ref = "recyclerview" }
+
+androidx-leanback = { group = "androidx.leanback", name = "leanback", version.ref = "leanback" }
+
+lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle" }
+lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
+
+coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines" }
+coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutines" }
+
+exoplayer-core = { group = "com.google.android.exoplayer", name = "exoplayer", version.ref = "exoplayer" }
+
+glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }

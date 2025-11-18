@@ -1,0 +1,4 @@
+<resources>
+
+    <style name="Theme.AndroidTVVideoBrowser" parent="@style/Theme.Leanback" />
+</resources>

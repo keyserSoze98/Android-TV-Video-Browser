@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="bottom"
+    android:padding="32dp"
+    android:background="@android:color/transparent">
+
+    <com.google.android.exoplayer2.ui.DefaultTimeBar
+        android:id="@+id/exo_progress"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        app:played_color="@android:color/holo_green_light"
+        app:buffered_color="@android:color/darker_gray"
+        app:scrubber_color="@android:color/white" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingVertical="24dp">
+
+        <ImageButton
+            android:id="@+id/exo_rew"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="72dp"
+            android:layout_height="40dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:background="@drawable/tv_button_selector"
+            android:src="@android:drawable/ic_media_rew"
+            app:tint="@android:color/white" />
+
+        <ImageButton
+            android:id="@+id/exo_play"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="72dp"
+            android:layout_height="40dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:background="@drawable/tv_button_selector"
+            android:src="@android:drawable/ic_media_play"
+            app:tint="@android:color/white" />
+
+        <ImageButton
+            android:id="@+id/exo_pause"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="72dp"
+            android:layout_height="40dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:background="@drawable/tv_button_selector"
+            android:src="@android:drawable/ic_media_pause"
+            app:tint="@android:color/white" />
+
+        <ImageButton
+            android:id="@+id/exo_ffwd"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="72dp"
+            android:layout_height="40dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:background="@drawable/tv_button_selector"
+            android:src="@android:drawable/ic_media_ff"
+            app:tint="@android:color/white" />
+
+    </LinearLayout>
+
+</LinearLayout>
