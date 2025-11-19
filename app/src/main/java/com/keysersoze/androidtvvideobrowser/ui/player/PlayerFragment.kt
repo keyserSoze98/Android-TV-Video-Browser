@@ -18,7 +18,6 @@ class PlayerFragment : Fragment() {
 
     private var player: ExoPlayer? = null
     private var videoUrl: String? = null
-    private var adapterIndex: Int = -1
 
     private var playbackPosition: Long = 0L
     private var playWhenReady = true
@@ -26,7 +25,6 @@ class PlayerFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         videoUrl = arguments?.getString(ARG_URL)
-        adapterIndex = arguments?.getInt(ARG_INDEX) ?: -1
     }
 
     override fun onCreateView(
@@ -81,8 +79,16 @@ class PlayerFragment : Fragment() {
                 }
             })
         }
+
+        saveLastPlayed()
     }
 
+    private fun saveLastPlayed() {
+        val prefs = requireContext().getSharedPreferences("tv_prefs", 0)
+        prefs.edit()
+            .putString("last_played_title", arguments?.getString(ARG_TITLE))
+            .apply()
+    }
 
     private fun releasePlayer() {
         player?.let { exoPlayer ->
@@ -100,13 +106,13 @@ class PlayerFragment : Fragment() {
 
     companion object {
         private const val ARG_URL = "videoUrl"
-        private const val ARG_INDEX = "adapterIndex"
+        private const val ARG_TITLE = "videoTitle"
 
-        fun newInstance(url: String, index: Int): PlayerFragment {
+        fun newInstance(url: String, title: String): PlayerFragment {
             return PlayerFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_URL, url)
-                    putInt(ARG_INDEX, index)
+                    putString(ARG_TITLE, title)
                 }
             }
         }

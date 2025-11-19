@@ -33,7 +33,7 @@ class HomeFragment : Fragment() {
 
         val adapter = VideoAdapter(videos) { videoItem, index ->
             lastFocusedIndex = index
-            openPlayer(videoItem.url, index)
+            openPlayer(videoItem.url, videoItem.title)
         }
 
         binding.recyclerView.apply {
@@ -43,6 +43,9 @@ class HomeFragment : Fragment() {
 
             post { getChildAt(0)?.requestFocus() }
         }
+
+        showLastPlayed()
+
     }
 
     override fun onResume() {
@@ -61,15 +64,29 @@ class HomeFragment : Fragment() {
         }
     }
 
-
-    private fun openPlayer(url: String, index: Int) {
+    private fun openPlayer(url: String, title: String) {
         parentFragmentManager.beginTransaction()
             .replace(
                 com.keysersoze.androidtvvideobrowser.R.id.fragmentContainer,
-                PlayerFragment.newInstance(url, index)
+                PlayerFragment.newInstance(url, title)
             )
             .addToBackStack(null)
             .commit()
+    }
+
+    private fun showLastPlayed() {
+        val prefs = requireContext().getSharedPreferences("tv_prefs", 0)
+        val lastTitle = prefs.getString("last_played_title", null)
+
+        if (lastTitle != null) {
+            binding.lastPlayedText.text = "Last Played: $lastTitle"
+            binding.lastPlayedText.visibility = View.VISIBLE
+
+            binding.lastPlayedText.animate()
+                .alpha(1f)
+                .setDuration(300)
+                .start()
+        }
     }
 
     override fun onDestroyView() {
