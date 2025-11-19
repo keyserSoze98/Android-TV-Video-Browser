@@ -9,9 +9,9 @@ Designed for smooth TV navigation, clean architecture, and reliable playback.
 
 🎥 Demo Video
 
-👉 Demo Video: 
+👉 Demo Video: https://drive.google.com/file/d/1RztmqPWDWkc_EnajjksLzci2ef_f8q_d/view?usp=drive_link
 
-👉 APK Download: 
+👉 APK Download: https://github.com/keyserSoze98/Android-TV-Video-Browser/blob/master/app/src/main/apk/app-debug.apk
 
 
 🚀 Features
@@ -66,11 +66,11 @@ Kotlin: 2.0.21
 
 AndroidX Core KTX: 1.17.0
 
-Leanback: 1.0.0
+Leanback: 1.0.0-rc01
 
 Glide: 4.11.0
 
-ExoPlayer: 2.x
+ExoPlayer: 2.19.1
 
 🖥️ Devices Used for Testing
 1. Physical Device
