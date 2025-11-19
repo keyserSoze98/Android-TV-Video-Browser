@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Android(TV Video Browser"
+rootProject.name = "Android TV Video Browser"
 include(":app")
  
